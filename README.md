@@ -1,1 +1,1 @@
-# libft's functions test
+# libft's functions
