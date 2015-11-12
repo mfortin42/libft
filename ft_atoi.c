@@ -10,7 +10,7 @@ int	atoi(const char *str)
 	sign = 1;
 	rslt = 0;
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-			str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
+		  str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{
