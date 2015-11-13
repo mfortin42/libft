@@ -8,12 +8,9 @@ char	*ft_strtrim(char const *s)
 	char			*str;
 
 	i = 0;
-	j = 0;
 	k = 0;
-	while (s[i] == ' ' || s[i] == ',' || s[i] == '\n' || s[i] == '\t')
+	while (s[i] && (s[i] == ' ' || s[i] == ',' || s[i] == '\n' || s[i] == '\t'))
 		i++;
-	if (s[i] == '\0')
-		return ("");
 	j = i;
 	while (s[j] && (s[j] != ' ' || s[j] != ',' || s[j] != '\n' || s[j] != '\t'))
 		j++;
