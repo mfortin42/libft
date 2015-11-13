@@ -13,7 +13,7 @@ char	*ft_strtrim(char const *s)
 	while (s[i] == ' ' || s[i] == ',' || s[i] == '\n' || s[i] == '\t')
 		i++;
 	j = i;
-	while (s[i] || s[j] != ' ' || s[j] != ',' || s[j] != '\n' || s[j] != '\t')
+	while (s[i] && (s[j] != ' ' || s[j] != ',' || s[j] != '\n' || s[j] != '\t'))
 		j++;
 	str = (char *)malloc(sizeof(char) * (j - i + 1));
 	if (str == NULL)
