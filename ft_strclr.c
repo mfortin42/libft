@@ -2,7 +2,7 @@
 
 void	ft_strclr(char *s)
 {
-	size_t i;
+	unsigned int	i;
 
 	i = 0;
 	while (s[i] != '\0')

@@ -2,12 +2,12 @@
 
 char	*ft_strcat(char *dest, const char *src)
 {
-	size_t dest_len;
-	size_t i;
+	unsigned int	i;
+	unsigned int	dest_len;
 
-	dest_len = ft_strlen(dest);
 	i = 0;
-	while (src[i] != '\0')
+	dest_len = ft_strlen(dest);
+	while (src[i])
 	{
 		dest[dest_len + i] = src[i];
 		i++;
