@@ -12,13 +12,15 @@ char	*ft_strtrim(char const *s)
 	k = 0;
 	while (s[i] == ' ' || s[i] == ',' || s[i] == '\n' || s[i] == '\t')
 		i++;
+	if (s[i] == '\0')
+		return ("");
 	j = i;
 	while (s[i] && (s[j] != ' ' || s[j] != ',' || s[j] != '\n' || s[j] != '\t'))
 		j++;
-	str = (char *)malloc(sizeof(char) * (j - i + 2));
+	str = (char *)malloc(sizeof(char) * (j - i + 1));
 	if (str == NULL)
 		return (NULL);
-	while (k < j - i + 1)
+	while (k < j - i)
 	{
 		str[k] = s[i + k];
 		k++;
