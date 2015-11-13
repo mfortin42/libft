@@ -14,6 +14,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 		dest[j + i] = src[i];
 		i++;
 	}
-	dest[j + i] = '\0';
+	if (j != n)
+		dest[j + i] = '\0';
 	return (j + ft_strlen(src));
 }
