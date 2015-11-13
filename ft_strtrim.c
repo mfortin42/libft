@@ -9,17 +9,17 @@ char	*ft_strtrim(char const *s)
 
 	i = 0;
 	k = 0;
-	while (s[i] && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 		i++;
 	if (s[i] == '\0')
 		return ("");
-	j = i;
-	while (s[j] && (s[j] != ' ' || s[j] != '\n' || s[j] != '\t'))
-		j++;
-	str = (char *)malloc(sizeof(char) * (j - i + 1));
+	j = ft_strlen(s) - 1;
+	while (s[j] == ' ' || s[j] == '\n' || s[j] == '\t')
+		j--;
+	str = (char *)malloc(sizeof(char) * (j - i + 2));
 	if (str == NULL)
 		return (NULL);
-	while (k < j - i)
+	while (k < j - i + 1)
 	{
 		str[k] = s[i + k];
 		k++;
