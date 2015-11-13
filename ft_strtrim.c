@@ -9,10 +9,10 @@ char	*ft_strtrim(char const *s)
 
 	i = 0;
 	k = 0;
-	while (s[i] && (s[i] == ' ' || s[i] == ',' || s[i] == '\n' || s[i] == '\t'))
+	while (s[i] && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
 		i++;
 	j = i;
-	while (s[j] && (s[j] != ' ' || s[j] != ',' || s[j] != '\n' || s[j] != '\t'))
+	while (s[j] && (s[j] != ' ' || s[j] != '\n' || s[j] != '\t'))
 		j++;
 	str = (char *)malloc(sizeof(char) * (j - i + 1));
 	if (str == NULL)
