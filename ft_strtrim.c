@@ -15,10 +15,10 @@ char	*ft_strtrim(char const *s)
 	j = i;
 	while (s[i] && (s[j] != ' ' || s[j] != ',' || s[j] != '\n' || s[j] != '\t'))
 		j++;
-	str = (char *)malloc(sizeof(char) * (j - i + 1));
+	str = (char *)malloc(sizeof(char) * (j - i + 2));
 	if (str == NULL)
 		return (NULL);
-	while (k < j - i)
+	while (k < j - i + 1)
 	{
 		str[k] = s[i + k];
 		k++;
