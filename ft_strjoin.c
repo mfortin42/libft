@@ -2,9 +2,9 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str;
 	int		i;
 	int		j;
+	char	*str;
 
 	i = 0;
 	j = 0;

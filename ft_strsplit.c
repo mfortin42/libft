@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int	ft_cntw(char const *s, char c)
+static int	ft_cntw(char const *s, char c)
 {
 	unsigned int	i;
 	int				cnt;
@@ -19,7 +19,7 @@ int	ft_cntw(char const *s, char c)
 	return (cnt);
 }
 
-char	*ft_strndup(const char *s, size_t n)
+static char	*ft_strndup(const char *s, size_t n)
 {
 	char	*str;
 
@@ -33,10 +33,10 @@ char	*ft_strndup(const char *s, size_t n)
 
 char	**ft_strsplit(char const *s, char c)
 {
-	char	**tab;
 	int		i;
 	int		j;
 	int		k;
+	char	**tab;
 
 	k = 0;
 	i = 0;

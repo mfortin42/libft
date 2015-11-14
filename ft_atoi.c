@@ -2,13 +2,13 @@
 
 int		ft_atoi(const char *str)
 {
+	int		i;
 	long	rslt;
 	long	sign;
-	int		i;
 
+	i = 0;
 	rslt = 0;
 	sign = 1;
-	i = 0;
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
 		str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
 		i++;
