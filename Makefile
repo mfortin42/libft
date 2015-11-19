@@ -1,4 +1,4 @@
-FLAGG = -Wall -Wextra -Werror
+FLAG = -Wall -Wextra -Werror
 
 NAME = libft.a
 
