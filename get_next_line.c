@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <fcntl.h>
 
-int	main(int ac, char **av)
+/*int	main(int ac, char **av)
 {
 	char	*line;
 	int		fd;
@@ -14,7 +14,7 @@ int	main(int ac, char **av)
 		printf("%s\n", line);
 	}
 	return (0);
-}
+}*/
 
 static size_t	ft_cnt_chr(char *tmp)
 {
