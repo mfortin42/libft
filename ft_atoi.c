@@ -2,7 +2,7 @@
 
 int		ft_atoi(const char *str)
 {
-	int		i;
+	unsigned int	i;
 	long	rslt;
 	long	sign;
 
