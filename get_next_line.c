@@ -84,6 +84,6 @@ int	get_next_line(int fd, char **line)
 		tmp = ft_strchr(tmp, '\n') + 1;
 		return (1);
 	}
-	tmp = ft_cnt_chr(tmp);
+	tmp += ft_cnt_chr(tmp);
 	return (0);
 }
