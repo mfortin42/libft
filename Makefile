@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mfortin <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2015/11/23 20:51:06 by mfortin           #+#    #+#              #
+#    Updated: 2015/11/24 11:26:02 by mfortin          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 FLAG = -Wall -Wextra -Werror
 
 NAME = libft.a
@@ -24,6 +36,7 @@ SRC = ft_atoi.c \
 		ft_memdel.c \
 		ft_memmove.c \
 		ft_memset.c \
+		ft_print_int_table.c \
 		ft_putchar.c \
 		ft_putchar_fd.c \
 		ft_putendl.c \
@@ -32,6 +45,7 @@ SRC = ft_atoi.c \
 		ft_putnbr_fd.c \
 		ft_putstr.c \
 		ft_putstr_fd.c \
+		ft_sort_integer_table.c \
 		ft_strcat.c \
 		ft_strchr.c \
 		ft_strclr.c \
@@ -58,6 +72,7 @@ SRC = ft_atoi.c \
 		ft_strstr.c \
 		ft_strsub.c \
 		ft_strtrim.c \
+		ft_swap.c \
 		ft_tolower.c \
 		ft_toupper.c
 

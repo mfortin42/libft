@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_sort_integer_table.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 20:45:44 by mfortin           #+#    #+#             */
-/*   Updated: 2015/11/24 11:21:12 by mfortin          ###   ########.fr       */
+/*   Created: 2015/11/24 10:30:32 by mfortin           #+#    #+#             */
+/*   Updated: 2015/11/24 11:10:59 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int	*ft_sort_integer_table(int *tab, int size)
 {
-	void *m;
+	int		i;
+	char	tmp;
 
-	m = malloc(size);
-	if (m == NULL)
-		return (NULL);
-	ft_bzero(m, size);
-	return (m);
+	i = 0;
+	while (i < size)
+	{
+		if (tab[i] > tab[i + 1])
+		{
+			tmp = tab[i];
+			tab[i] = tab[i + 1];
+			tab[i + 1] = tmp;
+			i = -1;
+		}
+		i++;
+	}
+	return (tab);
 }
