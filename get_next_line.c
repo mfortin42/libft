@@ -71,10 +71,11 @@ int	get_next_line(int fd, char **line)
 	static char		*tmp = "";
 	int				v;
 
-	if (read(fd, buff, 1) == -1 || line == NULL)
-		return (-1);
-	while ((v = read(fd, buff, BUFF_SIZE)))
+	v = 1;
+	while (ft_strchr(tmp, '\n') == NULL && v > 0)
 	{
+		if ((v = read(fd, buff, BUFF_SIZE)) == -1)
+			return (-1);
 		buff[v] = '\0';
 		tmp = ft_strjoin(tmp, buff);
 	}
@@ -84,6 +85,5 @@ int	get_next_line(int fd, char **line)
 		tmp = ft_strchr(tmp, '\n') + 1;
 		return (1);
 	}
-	tmp += ft_cnt_chr(tmp);
 	return (0);
 }
