@@ -69,6 +69,7 @@ int	get_next_line(int fd, char **line)
 {
 	char			buff[BUFF_SIZE + 1];
 	static char		*tmp = "";
+	char			*tmp2;
 	int				v;
 
 	v = 1;
@@ -77,12 +78,16 @@ int	get_next_line(int fd, char **line)
 		if ((v = read(fd, buff, BUFF_SIZE)) == -1)
 			return (-1);
 		buff[v] = '\0';
-		tmp = ft_strjoin(tmp, buff);
+		tmp2 = ft_strjoin(tmp, buff);
+		free(tmp);
+		tmp = tmp2;
 	}
 	*line = ft_strsub(tmp, 0, ft_cnt_chr(tmp));
 	if (ft_strchr(tmp, '\n'))
 	{
-		tmp = ft_strchr(tmp, '\n') + 1;
+		tmp2 = ft_strdup(ft_strchr(tmp, '\n') + 1);
+		free(tmp);
+		tmp = tmp2;
 		return (1);
 	}
 	return (0);
