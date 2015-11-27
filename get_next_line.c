@@ -30,9 +30,10 @@ int	get_next_line(int fd, char **line)
 {
 	char			buff[BUFF_SIZE + 1];
 	static char		*tmp = "";
-	int				v;
+	static int		v = 1;
 
-	v = 1;
+	if (line == NULL && fd < 0 && read(fd, buff, 0) < 0)
+		return (-1);
 	while (ft_strchr(tmp, '\n') == NULL && (v = read(fd, buff, BUFF_SIZE)) > 0)
 	{
 		buff[v] = '\0';
