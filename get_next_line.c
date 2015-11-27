@@ -1,8 +1,8 @@
-#include "get_next_line.h"
+#include "libft.h"
 #include <stdio.h>
 #include <fcntl.h>
 
-/*int	main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	char	*line;
 	int		fd;
@@ -14,7 +14,17 @@
 		printf("%s\n", line);
 	}
 	return (0);
-}*/
+}
+
+static int	ft_cnt_chr(char *tmp)
+{
+	unsigned int i;
+
+	i = 0;
+	while (tmp[i] != '\n' && tmp[i] != '\0')
+		i++;
+	return (i);
+}
 
 int	get_next_line(int fd, char **line)
 {
@@ -23,7 +33,7 @@ int	get_next_line(int fd, char **line)
 	int				v;
 
 	v = 1;
-	while (ft_strchr(tmp, '\n') == NULL && (v = read(fd, buff, BUFF_SIZE) > 0))
+	while (ft_strchr(tmp, '\n') == NULL && (v = read(fd, buff, BUFF_SIZE)) > 0)
 	{
 		buff[v] = '\0';
 		tmp = ft_strjoin(tmp, buff);
