@@ -2,18 +2,38 @@
 #include <stdio.h>
 #include <fcntl.h>
 
-int	main(int ac, char **av)
-{
-	char	*line;
-	int		fd;
+/*int	main(int ac, char **av)
+  {
+  char	*line;
+  int		fd;
 
-	(void)ac;
-	fd = open(av[1], O_RDONLY);
-	while (get_next_line(fd, &line))
+  (void)ac;
+  fd = open(av[1], O_RDONLY);
+  while (get_next_line(fd, &line))
+  {
+  printf("%s\n", line);
+  }
+  return (0);
+  }
+*/
+
+static char	**ft_new_fd(char **tmp, int fd)
+{
+	char	**new_tmp;
+	int		i;
+
+	i = -1;
+	if ((new_tmp = (char **)malloc(sizeof(char *) * (fd + 2))) == NULL)
+		return (NULL);
+	while (++i <= fd)
 	{
-		printf("%s\n", line);
+		if (tmp != NULL && tmp[i] != '\0')
+			new_tmp[i] = ft_strdup(tmp[i]);
+		else
+			new_tmp[i] = ft_strnew(0);
 	}
-	return (0);
+	new_tmp[i] = NULL;
+	return (new_tmp);
 }
 
 static int	ft_cnt_chr(char *tmp)
@@ -29,22 +49,24 @@ static int	ft_cnt_chr(char *tmp)
 int	get_next_line(int fd, char **line)
 {
 	char			buff[BUFF_SIZE + 1];
-	static char		*tmp = "";
-	int			v;
+	static char		**tmp = NULL;
+	int				vr;
 
-	if (line == NULL || fd < 0 || read(fd, buff, 0) < 0)
+	if (fd < 0 || line == NULL || read(fd, buff, 0) < 0)
 		return (-1);
-	while (ft_strchr(tmp, '\n') == NULL && (v = read(fd, buff, BUFF_SIZE)) > 0)
+	if (tmp == NULL || tmp[fd] == '\0')
+		tmp = ft_new_fd(tmp, fd);
+	while (!(ft_strchr(tmp[fd], '\n')) && (vr = read(fd, buff, BUFF_SIZE)) > 0)
 	{
-		buff[v] = '\0';
-		tmp = ft_strjoin(tmp, buff);
+		buff[vr] = '\0';
+		tmp[fd] = ft_strjoin(tmp[fd], buff);
 	}
-	*line = ft_strsub(tmp, 0, ft_cnt_chr(tmp));
-	if (ft_strchr(tmp, '\n'))
+	*line = ft_strsub(tmp[fd], 0, ft_cnt_chr(tmp[fd]));
+	if (ft_strchr(tmp[fd], '\n'))
 	{
-		tmp = ft_strchr(tmp, '\n') + 1;
+		tmp[fd] = ft_strchr(tmp[fd], '\n') + 1;
 		return (1);
 	}
-	tmp += ft_cnt_chr(tmp);
-	return (v ? 1 : 0);
+	tmp[fd] += ft_cnt_chr(tmp[fd]);
+	return (vr ? 1 : 0);
 }
