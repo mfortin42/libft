@@ -12,7 +12,6 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# define BUFF_SIZE 1000000
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -86,6 +85,5 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_swap(int *a, int *b);
 int					*ft_sort_integer_table(int *tab, int size);
 void				ft_print_int_table(int *tab, unsigned int size);
-int					get_next_line(int fd, char **line);
 
 #endif
