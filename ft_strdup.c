@@ -6,11 +6,11 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 20:47:48 by mfortin           #+#    #+#             */
-/*   Updated: 2015/11/23 20:47:49 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/02/03 12:42:33 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 char	*ft_strdup(const char *s)
 {

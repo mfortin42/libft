@@ -6,11 +6,11 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 20:48:14 by mfortin           #+#    #+#             */
-/*   Updated: 2015/11/24 11:23:52 by mfortin          ###   ########.fr       */
+/*   Updated: 2015/12/18 11:59:32 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {

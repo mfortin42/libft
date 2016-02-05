@@ -6,11 +6,11 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 10:30:32 by mfortin           #+#    #+#             */
-/*   Updated: 2015/11/24 11:10:59 by mfortin          ###   ########.fr       */
+/*   Updated: 2015/12/18 11:57:44 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 int	*ft_sort_integer_table(int *tab, int size)
 {
