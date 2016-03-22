@@ -1,3 +1,3 @@
-So many usefull and basics functions.
+So many useful and basics functions.
 
 Final grade : 121/100.
