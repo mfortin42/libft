@@ -89,5 +89,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_swap(int *a, int *b);
 int					*ft_sort_integer_table(int *tab, int size);
 void				ft_print_int_table(int *tab, unsigned int size);
+void				ft_putnbr_base(intmax_t nb, int base);
 
 #endif

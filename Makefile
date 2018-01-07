@@ -77,7 +77,7 @@ SRC = ft_atoi.c \
 		ft_swap.c \
 		ft_tolower.c \
 		ft_toupper.c \
-		get_next_line
+		ft_putnbr_base.c
 
 OBJ = $(SRC:.c=.o)
 
